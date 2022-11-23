@@ -302,29 +302,6 @@ public class DaoGarments implements Dao<Garment> {
             }
         }
     }
-
-//    /**
-//     * Löscht den User-Account und alle zu dem User gehörende Kleidungsstücke aus der Datenbank.
-//     * @param dbConnection : {@link Connection} : Verbindung zur Datenbank.
-//     * @param user : {@link User} eingeloggter User
-//     */
-//    public void deleteAllGarmentsFromUser(Connection dbConnection, User user) {
-//        PreparedStatement statement = null;
-//        try {
-//            statement = dbConnection.prepareStatement(STATEMENT_DELETE_ALL_GARMENTS_ONE_USER);
-//            statement.setInt(FIRST_INDEX, user.getId());
-//            statement.execute();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        } finally {
-//            try {
-//                if (statement != null) statement.close();
-//                dbConnection.close();
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
     //endregion
 
 }

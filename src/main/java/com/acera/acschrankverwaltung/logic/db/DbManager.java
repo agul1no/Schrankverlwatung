@@ -131,7 +131,6 @@ public class DbManager {
     public void deleteDataRecord(Object objectToDelete) {
         if (objectToDelete instanceof Garment garment) daoGarments.delete(getConnection(), garment);
         else if (objectToDelete instanceof User user) {
-//            daoGarments.deleteAllGarmentsFromUser(getConnection(), user);
             daoUsers.delete(getConnection(), user);
         } else System.out.println("DbManager - deleteDataRecord - Fehler beim Löschen");
     }
