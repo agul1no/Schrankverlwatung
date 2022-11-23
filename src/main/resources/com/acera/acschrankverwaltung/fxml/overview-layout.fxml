@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane dividerPositions="0.75" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../styles/overview-style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.acera.acschrankverwaltung.gui.OverviewController">
+    <items>
+        <VBox alignment="TOP_CENTER" minHeight="0.0" minWidth="600.0" prefHeight="200.0" prefWidth="100.0">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="59.0" prefWidth="600.0">
+                    <children>
+                        <ImageView fx:id="exitImageView" fitHeight="27.0" fitWidth="24.0" onMouseClicked="#logoutImageClicked" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/exit_image_white.png" />
+                            </image>
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                        </ImageView>
+                        <Label fx:id="welcomeMessage" text="Willkommen in der Schrankübersicht," textFill="WHITE">
+                            <font>
+                                <Font size="22.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="TOP_CENTER" prefHeight="36.0" prefWidth="600.0">
+                    <children>
+                        <TextField fx:id="searchTextField" focusTraversable="false" prefHeight="30.0" prefWidth="380.0" promptText="Suchbegriff eingeben. Suche startet automatisch." />
+                        <Button fx:id="resetTextBtn" focusTraversable="false" mnemonicParsing="false" onAction="#onResetButtonClicked" prefHeight="30.0" prefWidth="120.0" text="zurücksetzen">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <VBox.margin>
+                        <Insets top="20.0" />
+                    </VBox.margin>
+                </HBox>
+                <HBox alignment="CENTER_LEFT" maxWidth="500.0" prefHeight="36.0" prefWidth="400.0" spacing="50.0">
+                    <children>
+                        <Label text="Type" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label text="Marke" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label text="Preis" textFill="WHITE" />
+                        <Label text="Farbe" textFill="WHITE">
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Label>
+                        <Label text="Datum" textFill="WHITE" />
+                    </children>
+                </HBox>
+                <ListView fx:id="garmentListView" focusTraversable="false" prefHeight="307.0" prefWidth="499.0">
+                    <VBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                    </VBox.margin>
+                </ListView>
+                <Button fx:id="addGarmentBtn" focusTraversable="false" mnemonicParsing="false" onAction="#switchToDetailAnsicht" prefHeight="40.0" prefWidth="500.0" text="Kleidungsstück hinzufügen">
+                    <VBox.margin>
+                        <Insets top="40.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+        <VBox alignment="TOP_CENTER" minWidth="200.0" prefHeight="200.0" prefWidth="100.0" spacing="40.0">
+            <children>
+                <Label text="Sortierung" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="40.0" />
+                    </VBox.margin>
+                </Label>
+                <Button fx:id="sortGarmentType" focusTraversable="false" mnemonicParsing="false" onAction="#sortGarmentList" prefHeight="30.0" prefWidth="100.0" text="Type" />
+                <Button fx:id="sortGarmentBrand" focusTraversable="false" mnemonicParsing="false" onAction="#sortGarmentList" prefHeight="30.0" prefWidth="100.0" text="Marke" />
+                <Button fx:id="sortGarmentPrice" focusTraversable="false" mnemonicParsing="false" onAction="#sortGarmentList" prefHeight="30.0" prefWidth="100.0" text="Price" />
+                <Button fx:id="sortGarmentColor" focusTraversable="false" mnemonicParsing="false" onAction="#sortGarmentList" prefHeight="30.0" prefWidth="100.0" text="Farbe" />
+                <Button fx:id="sortGarmentDate" focusTraversable="false" mnemonicParsing="false" onAction="#sortGarmentList" prefHeight="30.0" prefWidth="100.0" text="Kaufdatum" />
+            <Label text="Konto löschen" textFill="#da0303" />
+            <ImageView fx:id="deleteImage" fitHeight="35.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true" onMouseClicked="#deleteIconClicked">
+               <image>
+                  <Image url="@../images/remove_icon_red.png" />
+               </image>
+               <VBox.margin>
+                  <Insets top="-30.0" />
+               </VBox.margin>
+            </ImageView>
+            </children>
+        </VBox>
+    </items>
+</SplitPane>

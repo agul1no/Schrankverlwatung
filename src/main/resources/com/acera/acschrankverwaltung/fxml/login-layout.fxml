@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../styles/login-style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.acera.acschrankverwaltung.gui.LoginController">
+    <children>
+        <Label text="Willkommen!" textFill="WHITE">
+            <font>
+                <Font name="System Bold" size="36.0" />
+            </font>
+        </Label>
+        <Label text="Melden Sie sich an oder erstellen Sie ein neues Konto, falls Sie noch nicht registriert sind." textFill="#fcfcfc">
+            <font>
+                <Font size="16.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="40.0" />
+            </VBox.margin>
+        </Label>
+        <Label fx:id="errorUserNameInvalidLength" text="Benutzername muss zwischen 3 und 20 Charakteren haben" textFill="#da0303">
+            <VBox.margin>
+                <Insets top="60.0" />
+            </VBox.margin>
+        </Label>
+        <Label fx:id="errorUserNameNotExist" text="Benutzername existiert nicht" textFill="#da0303">
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Label>
+        <TextField fx:id="userNameTextField" alignment="CENTER" focusTraversable="false" prefHeight="35.0" promptText="Benutzername">
+            <VBox.margin>
+                <Insets left="200.0" right="200.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+        <Label fx:id="errorPasswortWrong" text="falsches Passwort eingegeben." textFill="#da0303">
+            <VBox.margin>
+                <Insets top="40.0" />
+            </VBox.margin>
+        </Label>
+        <PasswordField fx:id="passwordField" alignment="CENTER" focusTraversable="false" prefHeight="35.0" promptText="Passwort">
+            <VBox.margin>
+                <Insets left="200.0" right="200.0" />
+            </VBox.margin>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </PasswordField>
+        <HBox alignment="TOP_CENTER" prefHeight="53.0" prefWidth="800.0" spacing="40.0">
+            <children>
+                <Button fx:id="loginBtn" focusTraversable="false" mnemonicParsing="false" onAction="#loginButtonClicked" prefHeight="40.0" prefWidth="120.0" text="Login">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                    <HBox.margin>
+                        <Insets />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="registerBtn" focusTraversable="false" mnemonicParsing="false" onAction="#switchToRegisterScene" prefHeight="40.0" prefWidth="120.0" text="Registrieren">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+            </children>
+            <VBox.margin>
+                <Insets top="40.0" />
+            </VBox.margin>
+        </HBox>
+        <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+            <children>
+                <Label fx:id="errorNoServerConnection" prefHeight="100.0" prefWidth="500.0" text="Die Verbindung zum Server konnte nicht hergestellt werden.  Bitte überprüfen Sie die Verbindung oder melden Sie sich bei Ihrem Systemadministrator." textAlignment="CENTER" textFill="#da0303" wrapText="true">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+    </children>
+    <padding>
+        <Insets top="40.0" />
+    </padding>
+</VBox>

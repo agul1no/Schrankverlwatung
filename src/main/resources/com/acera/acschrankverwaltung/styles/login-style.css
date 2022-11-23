@@ -1,0 +1,15 @@
+.root{
+    -fx-background-color: "#3b3b4d";
+}
+
+#loginBtn {
+    -fx-border-color: "#eded52";
+    -fx-background-color: "#ececc9";
+    -fx-padding: 6px;
+}
+
+#registerBtn {
+    -fx-border-color: "#eded52";
+    -fx-background-color: "#ececc9";
+    -fx-padding: 6px;
+}

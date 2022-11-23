@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="400.0" prefWidth="600.0" stylesheets="@../styles/delete-style.css"
+      xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.acera.acschrankverwaltung.gui.DeleteController">
+    <children>
+        <Label maxWidth="400.0"
+               text="Sind Sie sicher,dass  Sie Ihr Konto löschen möchten? Alle Ihre eingetragene Kleidungsstücke sowie Ihre Kontodaten werden endgültig gelöscht."
+               textAlignment="CENTER" textFill="#da0303" wrapText="true">
+            <VBox.margin>
+                <Insets top="40.0"/>
+            </VBox.margin>
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Label>
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Button fx:id="cancelBtn" mnemonicParsing="false" onAction="#onCancelClicked" text="Abbrechen">
+                    <HBox.margin>
+                        <Insets right="60.0"/>
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="confirmBtn" mnemonicParsing="false" text="Ja, bitte mein Konto löschen"
+                        onAction="#onDeleteClicked"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>

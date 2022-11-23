@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../styles/detail-style.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.acera.acschrankverwaltung.gui.DetailController">
+    <children>
+        <Label text="Detailansicht" textFill="WHITE">
+            <font>
+                <Font size="24.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="40.0" />
+            </VBox.margin>
+        </Label>
+        <VBox alignment="TOP_CENTER" prefHeight="54.0" prefWidth="603.0">
+            <children>
+                <Label fx:id="errorTextGarmentType" text="Art von Kleidung muss zwischen 3 und 10 Charakteren enthalten." textFill="#da0303" />
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Label text="Kleidungsart" textFill="WHITE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Label>
+                        <TextField fx:id="garmentTypeTextField" prefWidth="450.0">
+                            <HBox.margin>
+                                <Insets left="46.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+            </children>
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+        </VBox>
+        <VBox alignment="TOP_CENTER" layoutX="80.0" layoutY="105.0" prefHeight="53.0" prefWidth="800.0">
+            <children>
+                <Label fx:id="errorTextGarmentBrand" text="Kleidungsmarke muss zwischen 3 und 15 Charakteren enthalten." textFill="#da0303" />
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Label text="Kleidungsmarke" textFill="WHITE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Label>
+                        <TextField fx:id="garmentBrandTextField" prefWidth="450.0">
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+            </children>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </VBox>
+        <VBox alignment="TOP_CENTER" layoutX="80.0" layoutY="159.0" prefHeight="53.0" prefWidth="800.0">
+            <children>
+                <Label fx:id="errorTextGarmentPrice" text="Ungültiger Preis eingegeben. Maximal 5-stellig." textFill="#da0303" />
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Label text="Preis" textFill="WHITE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Label>
+                        <TextField fx:id="garmentPriceTextField" prefWidth="450.0">
+                            <HBox.margin>
+                                <Insets left="110.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+            </children>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </VBox>
+        <VBox alignment="TOP_CENTER" layoutX="80.0" layoutY="212.0" prefHeight="53.0" prefWidth="800.0">
+            <children>
+                <Label fx:id="errorTextGarmentColor" text="Farbe von Kleidung muss zwischen 3 und 10 Charakteren enthalten." textFill="#da0303" />
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Label text="Farbe" textFill="WHITE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Label>
+                        <TextField fx:id="garmentColorTextField" prefWidth="450.0">
+                            <HBox.margin>
+                                <Insets left="104.0" />
+                            </HBox.margin>
+                        </TextField>
+                    </children>
+                </HBox>
+            </children>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </VBox>
+        <VBox alignment="TOP_CENTER" layoutX="80.0" layoutY="266.0" prefHeight="53.0" prefWidth="800.0">
+            <children>
+                <Label fx:id="errorTextGarmentPurchaseDate" text="Bitte wählen Sie ein Datum aus" textFill="#da0303" />
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <Label text="Kaufdatum" textFill="WHITE">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </Label>
+                        <DatePicker fx:id="datePicker" prefWidth="450.0">
+                            <HBox.margin>
+                                <Insets left="62.0" />
+                            </HBox.margin>
+                        </DatePicker>
+                    </children>
+                </HBox>
+            </children>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </VBox>
+        <HBox alignment="CENTER_LEFT" prefHeight="98.0" prefWidth="540.0">
+            <VBox.margin>
+                <Insets top="20.0" />
+            </VBox.margin>
+            <children>
+                <Button fx:id="backBtn" mnemonicParsing="false" onAction="#switchToOverviewScene" prefHeight="30.0" prefWidth="120.0" text="Zurück">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <HBox alignment="CENTER_RIGHT" prefHeight="98.0" prefWidth="483.0">
+                    <children>
+                        <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteGarment" prefHeight="30.0" prefWidth="120.0" text="Löschen">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets right="20.0" />
+                            </HBox.margin>
+                        </Button>
+                        <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveButtonClicked" prefHeight="30.0" prefWidth="120.0" text="Speichern">
+                            <font>
+                                <Font size="18.0" />
+                            </font>
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                </HBox>
+            </children>
+        </HBox>
+    </children>
+    <padding>
+        <Insets left="70.0" right="70.0" />
+    </padding>
+</VBox>

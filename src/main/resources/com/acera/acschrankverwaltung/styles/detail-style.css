@@ -1,0 +1,21 @@
+.root {
+    -fx-background-color: "#3b3b4d";
+}
+
+#backBtn {
+    -fx-border-color: "#eded52";
+    -fx-background-color: "#ececc9";
+    -fx-padding: 6px;
+}
+
+#deleteBtn {
+    -fx-border-color: "#eded52";
+    -fx-background-color: "#ececc9";
+    -fx-padding: 6px;
+}
+
+#saveBtn {
+    -fx-border-color: "#eded52";
+    -fx-background-color: "#ececc9";
+    -fx-padding: 6px;
+}

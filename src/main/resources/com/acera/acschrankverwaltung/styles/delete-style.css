@@ -1,0 +1,16 @@
+.root{
+    -fx-background-color: "#3b3b4d";
+}
+
+#confirmBtn {
+    -fx-border-color: "#da0303";
+    -fx-background-color: "#da0303";
+    -fx-padding: 6px;
+    -fx-text-fill: "white";
+}
+
+#cancelBtn {
+    -fx-border-color: "#eded52";
+    -fx-background-color: "#ececc9";
+    -fx-padding: 6px;
+}

@@ -1,0 +1,49 @@
+.root{
+    -fx-background-color: "#3b3b4d";
+}
+
+.list-cell:filled:selected {
+    -fx-text-fill: white;
+}
+
+.split-pane-divider {
+   -fx-background-color: "#4a4a7e";
+}
+
+#resetTextBtn {
+    -fx-border-color: "#eded52";
+    -fx-background-color: "#ececc9";
+    -fx-padding: 1px;
+}
+
+#addGarmentBtn {
+    -fx-border-color: "#eded52";
+    -fx-background-color: "#ececc9";
+    -fx-padding: 6px;
+}
+
+#sortGarmentType {
+    -fx-border-color: "#eded52";
+    -fx-background-color: "#ececc9";
+    -fx-padding: 6px;
+}
+#sortGarmentBrand {
+    -fx-border-color: "#eded52";
+    -fx-background-color: "#ececc9";
+    -fx-padding: 6px;
+}
+#sortGarmentPrice {
+    -fx-border-color: "#eded52";
+    -fx-background-color: "#ececc9";
+    -fx-padding: 6px;
+}
+#sortGarmentColor {
+    -fx-border-color: "#eded52";
+    -fx-background-color: "#ececc9";
+    -fx-padding: 6px;
+}
+#sortGarmentDate {
+    -fx-border-color: "#eded52";
+    -fx-background-color: "#ececc9";
+    -fx-padding: 6px;
+}
