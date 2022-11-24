@@ -1,4 +1,4 @@
-# Schrankverlwatung
+# Schrankverwaltung
 
 <img src="https://github.com/agul1no/Schrankverwaltung/blob/schrankverwaltung_1.0/SchrankverwaltungMockup.png" width="800" height="440" />
 
