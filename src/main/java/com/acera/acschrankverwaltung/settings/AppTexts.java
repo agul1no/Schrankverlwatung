@@ -13,14 +13,9 @@ public class AppTexts {
     public static final String DELETE_DIALOG_TITLE = "Möchten Sie Ihr Konto löschen?";
     //endregion
 
-    //region Attribute
-    //endregion
-
     //region Konstruktor
-    private AppTexts() {}
-    //endregion
-
-    //region Methoden
+    private AppTexts() {
+    }
     //endregion
 
 }

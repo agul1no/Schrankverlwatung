@@ -18,12 +18,9 @@ import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
 /**
- *  Der DetailController enthält die Steuerlogik für die DetailScene
+ * Der DetailController enthält die Steuerlogik für die DetailScene
  */
 public class DetailController implements Initializable {
-
-    //region Konstanten
-    //endregion
 
     //region Attribute
     private Garment selectedGarment;
@@ -47,9 +44,6 @@ public class DetailController implements Initializable {
     private Label errorTextGarmentColor;
     @FXML
     private Label errorTextGarmentPurchaseDate;
-    //endregion
-
-    //region Konstruktor
     //endregion
 
     /**

@@ -33,7 +33,7 @@ public class DaoGarments implements Dao<Garment> {
     private final String STATEMENT_SELECT_ALL_GARMENTS = "SELECT * FROM " + TABLE_NAME + ";";
     private final String STATEMENT_SELECT_ALL_GARMENTS_FOR_USER_SEARCH_BUTTON = "SELECT * FROM " + TABLE_NAME + " WHERE " +
             COLUMN_USER_ID + " = ? AND (" + COLUMN_TYPE + " LIKE ? OR " + COLUMN_BRAND + " LIKE ? OR " + COLUMN_PRICE +
-            " LIKE ? OR " + COLUMN_COLOR + " LIKE ? OR " +  COLUMN_DATE + " LIKE ?);";
+            " LIKE ? OR " + COLUMN_COLOR + " LIKE ? OR " + COLUMN_DATE + " LIKE ?);";
     private final String STATEMENT_SELECT_ONE_GARMENT_FOR_USER = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_GARMENT_ID
             + " = ? AND WHERE " + COLUMN_USER_ID + " = ?;";
     private final String STATEMENT_UPDATE_GARMENT = "UPDATE " + TABLE_NAME + " SET " + COLUMN_TYPE + " = ?, " +
@@ -50,12 +50,6 @@ public class DaoGarments implements Dao<Garment> {
     private final int FIFTH_INDEX = 5;
     private final int SIXTH_INDEX = 6;
     private final int SEVENTH_INDEX = 7;
-    //endregion
-
-    //region Attribute
-    //endregion
-
-    //region Konstruktor
     //endregion
 
     //region Methoden
@@ -133,8 +127,9 @@ public class DaoGarments implements Dao<Garment> {
 
     /**
      * Methode, welche die Kleidungsstücke von einem bestimmten User aus der Datenbank ausliest und zurückgibt.
+     *
      * @param dbConnection : {@link Connection} : Verbindung zur Datenbank.
-     * @param user : {@link User} eingeloggter User
+     * @param user         : {@link User} eingeloggter User
      * @return Gibt die Liste der Kleidungsstücke für den passenden User zurück.
      */
     public List<Garment> readAllGarmentsUser(Connection dbConnection, User user) {
@@ -175,8 +170,9 @@ public class DaoGarments implements Dao<Garment> {
 
     /**
      * Gibt die Liste von einem bestimmten User für ein bestimmtes Suchkriterium zurück.
-     * @param dbConnection : {@link Connection} : Verbindung zur Datenbank.
-     * @param user : {@link User} eingeloggter User
+     *
+     * @param dbConnection   : {@link Connection} : Verbindung zur Datenbank.
+     * @param user           : {@link User} eingeloggter User
      * @param searchCriteria : {@link String} eingegebenes Suchkriterium im Suchfeld.
      * @return
      */
@@ -187,11 +183,11 @@ public class DaoGarments implements Dao<Garment> {
         try {
             statement = dbConnection.prepareStatement(STATEMENT_SELECT_ALL_GARMENTS_FOR_USER_SEARCH_BUTTON);
             statement.setInt(FIRST_INDEX, user.getId());
-            statement.setString(SECOND_INDEX, searchCriteria+"%");
-            statement.setString(THIRD_INDEX, searchCriteria+"%");
-            statement.setString(FOURTH_INDEX, searchCriteria+"%");
-            statement.setString(FIFTH_INDEX, searchCriteria+"%");
-            statement.setString(SIXTH_INDEX, searchCriteria+"%");
+            statement.setString(SECOND_INDEX, searchCriteria + "%");
+            statement.setString(THIRD_INDEX, searchCriteria + "%");
+            statement.setString(FOURTH_INDEX, searchCriteria + "%");
+            statement.setString(FIFTH_INDEX, searchCriteria + "%");
+            statement.setString(SIXTH_INDEX, searchCriteria + "%");
             System.out.println("DaoGarments - readByAllCriteria - logged user id: " + user.getId());
             System.out.println("DaoGarments - readByAllCriteria - statement: " + statement);
             ResultSet resultSet = statement.executeQuery();
@@ -303,5 +299,4 @@ public class DaoGarments implements Dao<Garment> {
         }
     }
     //endregion
-
 }

@@ -14,7 +14,6 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -26,8 +25,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -38,7 +35,7 @@ import java.util.ResourceBundle;
 /**
  * Der OverviewController enthält die Steuerlogik für die OverviewScene
  */
-public class OverviewController implements Initializable{
+public class OverviewController implements Initializable {
 
     //region Konstanten
     public static final String SORT_GARMENT_TYPE = "sortGarmentType";
@@ -58,14 +55,9 @@ public class OverviewController implements Initializable{
     private TextField searchTextField;
     @FXML
     private ImageView deleteImage;
-
-    //endregion
-
-    //region Konstruktor
     //endregion
 
     //region Methoden
-
     /**
      * Die Methode wird bei jedem Aufruf der OverviewScene aufgerufen.
      *
@@ -91,10 +83,10 @@ public class OverviewController implements Initializable{
     private void setTextFieldChangeListener() {
         searchTextField.textProperty().addListener(((observableValue, oldValue, newValue) -> {
             garmentListView.getSelectionModel().clearSelection();
-            if (newValue.isBlank() || newValue.isEmpty()){
+            if (newValue.isBlank() || newValue.isEmpty()) {
                 GarmentHolder.getInstance().loadGarmentsByUser();
                 garmentListView.setItems(GarmentHolder.getInstance().getObservableListGarments());
-            }else {
+            } else {
                 GarmentHolder.getInstance().loadGarmentsBySearchCriteria(newValue);
                 garmentListView.setItems(GarmentHolder.getInstance().getObservableListSearchedGarments());
             }
@@ -165,6 +157,7 @@ public class OverviewController implements Initializable{
 
     /**
      * Sortiert die Liste der Kleidungsstücke je nach Kriterium.
+     *
      * @param actionEvent : {@link ActionEvent} : erkennt, auf welchem Knopf der User gedrückt hat.
      */
     @FXML
@@ -181,6 +174,9 @@ public class OverviewController implements Initializable{
         }
     }
 
+    /**
+     * Setzt den MouseClickedListener zu dem Löschen-Icon und blendet das Löschfenster ein.
+     */
     @FXML
     private void deleteIconClicked() {
         deleteImage.setOnMouseClicked(new EventHandler<MouseEvent>() {

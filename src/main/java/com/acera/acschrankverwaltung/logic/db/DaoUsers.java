@@ -11,7 +11,7 @@ import java.util.List;
  * Stellt Methoden zur Verfügung zum Erstellen, Auslesen,
  * Bearbeiten, Löschen von Benutzern in/aus der Datenbank.
  */
-public class DaoUsers implements Dao<User>{
+public class DaoUsers implements Dao<User> {
 
     //region Konstanten
     private final String TABLE_NAME = "users";
@@ -35,14 +35,7 @@ public class DaoUsers implements Dao<User>{
     private final int THIRD_INDEX = 3;
     //endregion
 
-    //region Attribute
-    //endregion
-
-    //region Konstruktor
-    //endregion
-
     //region Methoden
-
     @Override
     public void create(Connection dbConnection, User user) {
         PreparedStatement statement = null;
@@ -62,7 +55,7 @@ public class DaoUsers implements Dao<User>{
                 insertId = resultSet.getInt("insert_id");
                 user.setId(insertId);
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
@@ -94,7 +87,7 @@ public class DaoUsers implements Dao<User>{
                 user.setId(resultSet.getInt(COLUMN_USER_ID));
                 users.add(user);
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
@@ -124,7 +117,7 @@ public class DaoUsers implements Dao<User>{
                 );
                 user.setId(resultSet.getInt(COLUMN_USER_ID));
             }
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
@@ -140,8 +133,9 @@ public class DaoUsers implements Dao<User>{
 
     /**
      * Diese Methode sucht nach einem User mit dem eingegebenen Benutzernamen und hashed Passwort und gibt diesen zurück.
-     * @param dbConnection : {@link Connection} : Verbindung zur Datenbank.
-     * @param userName : {@link String} : Benutzername
+     *
+     * @param dbConnection       : {@link Connection} : Verbindung zur Datenbank.
+     * @param userName           : {@link String} : Benutzername
      * @param hashedUserPassword : {@link String} : Hashed Password
      * @return user: {@link User} : gesuchten User aus der Datenbank
      */
@@ -158,7 +152,7 @@ public class DaoUsers implements Dao<User>{
                 user = new User(
                         resultSet.getString(COLUMN_USER_NAME),
                         resultSet.getString(COLUMN_USER_PASSWORD)
-                        );
+                );
                 user.setId(resultSet.getInt(COLUMN_USER_ID));
             }
         } catch (Exception e) {
@@ -184,9 +178,9 @@ public class DaoUsers implements Dao<User>{
             statement.setDouble(THIRD_INDEX, user.getId());
 
             statement.executeUpdate();
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 if (statement != null) statement.close();
                 dbConnection.close();
@@ -203,9 +197,9 @@ public class DaoUsers implements Dao<User>{
             statement = dbConnection.prepareStatement(STATEMENT_DELETE_ONE_USER);
             statement.setInt(FIRST_INDEX, user.getId());
             statement.execute();
-        }catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
                 if (statement != null) statement.close();
                 dbConnection.close();

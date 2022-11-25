@@ -11,12 +11,9 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- *  Klasse, welche alle Kleidungsstücke als ObservableList bereitstellt.
+ * Klasse, welche alle Kleidungsstücke als ObservableList bereitstellt.
  */
 public class GarmentHolder {
-
-    //region Konstanten
-    //endregion
 
     //region Attribute
     private static GarmentHolder instance;
@@ -69,7 +66,7 @@ public class GarmentHolder {
         observableListSearchedGarments.removeAll(observableListSearchedGarments);
         observableListGarments.removeListener(listChangeListener);
         observableListGarments.removeAll(observableListGarments);
-        observableListGarments.addAll((List<Garment>)DbManager.getInstance().readAllDataRecords(DbManager.GARMENT_TYPE));
+        observableListGarments.addAll((List<Garment>) DbManager.getInstance().readAllDataRecords(DbManager.GARMENT_TYPE));
         observableListGarments.addListener(listChangeListener);
     }
 
@@ -96,10 +93,10 @@ public class GarmentHolder {
                     if (change.wasAdded()) {
                         Garment garmentToInsert = change.getAddedSubList().get(0);
                         DbManager.getInstance().insertDataRecord(garmentToInsert);
-                    }else if (change.wasRemoved()) {
+                    } else if (change.wasRemoved()) {
                         Garment garmentToDelete = change.getRemoved().get(0);
                         DbManager.getInstance().deleteDataRecord(garmentToDelete);
-                    }else if (change.wasUpdated()) {
+                    } else if (change.wasUpdated()) {
                         int updateIndex = change.getFrom();
                         Garment garmentToUpdate = change.getList().get(updateIndex);
                         DbManager.getInstance().updateDataRecord(garmentToUpdate);

@@ -20,14 +20,10 @@ public class AppConstants {
     public static final int MAX_DOUBLE_LENGTH_PRICE = 5;
     //endregion
 
-    //region Attribute
-    //endregion
 
     //region Konstruktor
-    private AppConstants() {}
-    //endregion
-
-    //region Methoden
+    private AppConstants() {
+    }
     //endregion
 
 }

@@ -20,9 +20,6 @@ import java.util.ResourceBundle;
  */
 public class RegisterController implements Initializable {
 
-    //region Konstanten
-    //endregion
-
     //region Attribute
     @FXML
     private Label errorUserNameAlreadyExists;
@@ -48,9 +45,6 @@ public class RegisterController implements Initializable {
     private User user;
     //endregion
 
-    //region Konstruktor
-    //endregion
-
     //region Methoden
     /**
      * Die Methode wird bei jedem Aufruf der RegisterScene aufgerufen.
@@ -74,6 +68,7 @@ public class RegisterController implements Initializable {
         errorUserNameInvalidLength.setVisible(false);
         errorNoServerConnection.setVisible(false);
     }
+
     /**
      * Prüft, die Verbindung zum Server über den DbManager. Wenn es keine Verbindung zum Server besteht, zeigt
      * diese Methode die entsprechende Fehlermeldung in der LoginScene.
@@ -94,11 +89,13 @@ public class RegisterController implements Initializable {
         checkServerConnection();
         if (userNameTextField.getText().isEmpty() || userNameTextField.getText().isBlank() ||
                 userNameTextField.getText().length() < AppConstants.MIN_STRING_LENGTH ||
-                userNameTextField.getText().length() > AppConstants.MAX_STRING_LENGTH) errorUserNameInvalidLength.setVisible(true);
+                userNameTextField.getText().length() > AppConstants.MAX_STRING_LENGTH)
+            errorUserNameInvalidLength.setVisible(true);
         else {
             userName = userNameTextField.getText();
             if (UserHolder.getInstance().containsUserName(userName)) errorUserNameAlreadyExists.setVisible(true);
-            else if (!passwordFieldOne.getText().equals(passwordFieldTwo.getText())) errorPasswordsDontMatch.setVisible(true);
+            else if (!passwordFieldOne.getText().equals(passwordFieldTwo.getText()))
+                errorPasswordsDontMatch.setVisible(true);
             else {
                 passwordOne = passwordFieldOne.getText();
                 HashGenerator hashGenerator = new HashGenerator();
@@ -126,5 +123,4 @@ public class RegisterController implements Initializable {
     }
 
     //endregion
-
 }

@@ -24,6 +24,7 @@ public class User {
         this.userName = new SimpleStringProperty(STANDARD_STRING_VALUE);
         this.userPasswort = new SimpleStringProperty(STANDARD_STRING_VALUE);
     }
+
     public User(String userName, String userPasswort) {
         this.userName = new SimpleStringProperty(userName);
         this.userPasswort = new SimpleStringProperty(userPasswort);

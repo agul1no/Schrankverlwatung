@@ -7,20 +7,13 @@ import java.security.NoSuchAlgorithmException;
 
 public class HashGenerator {
 
-    //region Konstanten
-    //endregion
-
-    //region Attribute
-    //endregion
-
-    //region Konstruktor
-    //endregion
-
     //region Methoden
+
     /**
      * Methode, welche ein String in ein byte Array umwandelt und zurückgibt.
      * Statische Methode getInstance wird aufgerufen mit hashing SHA
      * digest() Methode wird aufgerufen und der Input wird in ein byte Array umgewandelt.
+     *
      * @param input : {@link String} : Input, der gehasht wird.
      * @return byte[] : {@link Byte[]} : Byte Array
      * @throws NoSuchAlgorithmException
@@ -29,8 +22,10 @@ public class HashGenerator {
         MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
         return messageDigest.digest(input.getBytes(StandardCharsets.UTF_8));
     }
+
     /**
      * Methode, welche ein Byte Array in ein gehashtes String umwandelt und zurückgibt.
+     *
      * @param hash : {@link Byte[]} : Byte Array
      * @return {@link String} hashed Passwort.
      */
@@ -43,5 +38,4 @@ public class HashGenerator {
         return hexString.toString();
     }
     //endregion
-
 }

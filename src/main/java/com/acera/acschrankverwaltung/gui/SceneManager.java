@@ -11,10 +11,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Klasse, welche zuständig für das Wechseln zwischen den Szenen im Programm ist.
+ */
 public class SceneManager {
-
-    //region Konstanten
-    //endregion
 
     //region Attribute
     private static SceneManager instance;
@@ -22,7 +22,6 @@ public class SceneManager {
     //endregion
 
     //region Konstruktor
-
     /**
      * Singleton, welcher zuständig für das Wechseln der Szenen ist.
      */
@@ -103,5 +102,4 @@ public class SceneManager {
         mainStage.show();
     }
     //endregion
-
 }

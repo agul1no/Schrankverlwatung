@@ -4,7 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 /**
- *Diese Klasse speichert das Format, in welchem das Datum nach dem Auslesen aus der Datenbank ausgegeben wird
+ * Diese Klasse speichert das Format, in welchem das Datum nach dem Auslesen aus der Datenbank ausgegeben wird
  * und stellt die Methode für die Umwandlung zur Verfügung.
  */
 public class DateFormatter {
@@ -13,11 +13,9 @@ public class DateFormatter {
     public static String DAY_MONTH_YEAR_FORMAT = "dd-MM-yyyy";
     //endregion
 
-    //region Attribute
-    //endregion
-
     //region Konstruktor
-    private DateFormatter() {}
+    private DateFormatter() {
+    }
     //endregion
 
     //region Methoden

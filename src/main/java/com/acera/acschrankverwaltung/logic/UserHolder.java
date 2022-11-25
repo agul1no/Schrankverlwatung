@@ -14,9 +14,6 @@ import java.util.List;
  */
 public class UserHolder {
 
-    //region Konstanten
-    //endregion
-
     //region Attribute
     private static UserHolder instance;
     private ObservableList<User> observableListUsers;
@@ -64,6 +61,7 @@ public class UserHolder {
 
     /**
      * Methode, welche überprüft, ob der Benutzername in der Liste enthalten ist
+     *
      * @param userName :  {@link String} Benutzername
      * @return {@link Boolean} gibt true oder false, wenn der User in der Liste enthalten ist oder nicht.
      */
@@ -76,13 +74,15 @@ public class UserHolder {
 
     /**
      * Methode, welche überprüft, ob der Benutzername und das Passwort in der Liste enthalten sind.
-     * @param userName :  {@link String} Benutzername.
+     *
+     * @param userName            :  {@link String} Benutzername.
      * @param hashedUserPassword: {@link String} Hashed Passwort.
      * @return {@link Boolean} gibt true oder false, wenn der User in der Liste enthalten ist oder nicht.
      */
     public boolean containsUserNameAndPassword(String userName, String hashedUserPassword) {
         for (int i = 0; i < observableListUsers.size(); i++) {
-            if (observableListUsers.get(i).getUserName().equals(userName) && observableListUsers.get(i).getUserPasswort().equals(hashedUserPassword)) return true;
+            if (observableListUsers.get(i).getUserName().equals(userName) && observableListUsers.get(i).getUserPasswort().equals(hashedUserPassword))
+                return true;
         }
         return false;
     }

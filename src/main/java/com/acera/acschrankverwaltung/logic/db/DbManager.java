@@ -92,6 +92,7 @@ public class DbManager {
 
     /**
      * Methode, welche die Liste von einem bestimmten User für ein bestimmtes Suchkriterium zurückgibt.
+     *
      * @param searchCriteria : {@link String} : Suchkriterium
      * @return List<Garment> : {@link List<Garment>} : Die gewünschten Objekte als Liste
      */
@@ -103,7 +104,8 @@ public class DbManager {
 
     /**
      * Diese Methode sucht nach einem User mit dem eingegebenen Benutzernamen und hashed Passwort und gibt diesen zurück.
-     * @param userName : {@link String} : Benutzername
+     *
+     * @param userName           : {@link String} : Benutzername
      * @param hashedUserPassword : {@link String} : Hashed Password
      * @return user: {@link User} : gesuchten User aus der Datenbank
      */
@@ -126,7 +128,7 @@ public class DbManager {
     /**
      * Leitet das Löschen eines Datensatzes für das übergebene Objekt ein.
      * Dafür wird geprüft, um welche Instanz es sich genau handelt. Wenn ein User gelöscht wird, so werden seine ganzen
-     *  Kleidungsstücke mitgelöscht anhand des Constraints in der Datenbank definiert.
+     * Kleidungsstücke mitgelöscht anhand des Constraints in der Datenbank definiert.
      */
     public void deleteDataRecord(Object objectToDelete) {
         if (objectToDelete instanceof Garment garment) daoGarments.delete(getConnection(), garment);

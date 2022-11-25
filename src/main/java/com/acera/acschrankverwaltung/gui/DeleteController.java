@@ -6,23 +6,16 @@ import javafx.fxml.FXML;
 import javafx.stage.Stage;
 
 /**
- *  Der DeleteController enthält die Steuerlogik für die DeleteScene bzw. DeleteDialog
+ * Der DeleteController enthält die Steuerlogik für die DeleteScene bzw. DeleteDialog
  */
 public class DeleteController {
-
-    //region Konstanten
-    //endregion
 
     //region Attribute
     private Stage dialog;
     //endregion
 
-    //region Konstruktor
-    //endregion
-
     //region Methoden
-
-    public void passStageDialog(Stage dialog){
+    public void passStageDialog(Stage dialog) {
         this.dialog = dialog;
     }
 
@@ -42,5 +35,4 @@ public class DeleteController {
         dialog.close();
     }
     //endregion
-
 }

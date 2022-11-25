@@ -21,9 +21,6 @@ import java.util.ResourceBundle;
  */
 public class LoginController implements Initializable {
 
-    //region Konstanten
-    //endregion
-
     //region Attribute
     @FXML
     private Label errorUserNameNotExist;
@@ -43,11 +40,7 @@ public class LoginController implements Initializable {
     private User user;
     //endregion
 
-    //region Konstruktor
-    //endregion
-
     //region Methoden
-
     /**
      * Die Methode wird bei jedem Aufruf der LoginScene aufgerufen.
      *
@@ -139,5 +132,4 @@ public class LoginController implements Initializable {
         SceneManager.getInstance().switchToOverviewScene();
     }
     //endregion
-
 }
